@@ -2,7 +2,7 @@
 
 **Evaluating the Long-Term Memory of Large Language Models**
 
-[![Paper](https://img.shields.io/badge/Paper-arXiv-red)](https://arxiv.org/abs/2309.16609)
+[![Paper](https://aclanthology.org/2025.findings-acl.1014/)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
