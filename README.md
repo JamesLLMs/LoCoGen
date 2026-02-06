@@ -2,7 +2,7 @@
 
 **Evaluating the Long-Term Memory of Large Language Models**
 
-[![Paper](https://aclanthology.org/2025.findings-acl.1014/)
+[![Paper](https://img.shields.io/badge/Paper-ACL%202025-blue)](https://aclanthology.org/2025.findings-acl.1014)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
@@ -184,13 +184,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 For questions or issues, please:
 - Open an issue on GitHub
 - Contact the authors (see paper for details)
-
-## 🔗 Links
-
-- [Paper (arXiv)](https://arxiv.org/abs/2309.16609)
-- [Dataset](https://github.com/JamesLLMs/LoCoGen)
-- [Documentation](docs/)
-
----
-
-**Note**: This is a refactored version of the original LoCoGen project with improved code structure, documentation, and maintainability.
