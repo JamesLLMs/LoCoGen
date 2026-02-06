@@ -1,0 +1,24 @@
+# Core dependencies
+openai>=1.0.0
+transformers>=4.30.0
+torch>=2.0.0
+tiktoken>=0.5.0
+
+# Data processing
+numpy>=1.24.0
+pandas>=2.0.0
+
+# Utilities
+tqdm>=4.65.0
+python-dotenv>=1.0.0
+pyyaml>=6.0
+
+# NLP tools
+nltk>=3.8
+
+# Evaluation metrics
+rouge-score>=0.1.2
+
+# Optional: for local model inference
+# accelerate>=0.20.0
+# bitsandbytes>=0.39.0

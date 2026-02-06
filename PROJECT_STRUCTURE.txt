@@ -1,0 +1,105 @@
+LoCoGen 项目结构（重构后）
+================================
+
+新的规范结构：
+--------------
+LoCoGen/
+├── src/                                    # 源代码目录
+│   ├── __init__.py
+│   ├── config.py                           # ✅ 配置管理
+│   ├── api_client.py                       # ✅ 统一 API 客户端
+│   ├── prompts.py                          # ✅ 提示词模板
+│   ├── utils/                              # 工具模块
+│   │   ├── __init__.py
+│   │   ├── json_utils.py                   # ✅ JSON 处理
+│   │   ├── text_utils.py                   # ✅ 文本处理
+│   │   └── file_utils.py                   # ✅ 文件操作
+│   ├── pipeline/                           # 流水线模块
+│   │   ├── __init__.py
+│   │   ├── stage1_character_init.py        # ✅ 阶段1：角色初始化
+│   │   ├── stage2_diary_generation.py      # ⏳ 阶段2：日记生成
+│   │   ├── stage3_dialogue_generation.py   # ⏳ 阶段3：对话生成
+│   │   ├── stage4_dataset_construction.py  # ⏳ 阶段4：数据集构建
+│   │   └── stage5_question_generation.py   # ⏳ 阶段5：问题生成
+│   └── evaluation/                         # 评估模块
+│       ├── __init__.py
+│       ├── metrics/                        # 评估指标
+│       │   ├── __init__.py
+│       │   ├── bleu.py                     # ⏳ BLEU 指标
+│       │   ├── rouge.py                    # ⏳ ROUGE 指标
+│       │   ├── meteor.py                   # ⏳ METEOR 指标
+│       │   └── cider.py                    # ⏳ CIDEr 指标
+│       └── consistency_model.py            # ⏳ 一致性模型
+│
+├── data/                                   # 数据目录
+│   ├── raw/                                # 原始数据
+│   │   └── mbti_profile_dataset.json
+│   ├── intermediate/                       # 中间数据
+│   │   ├── stage1_characters/
+│   │   ├── stage2_diaries/
+│   │   ├── stage3_dialogues/
+│   │   └── stage4_datasets/
+│   └── final/                              # 最终输出
+│       ├── LOCCO.json
+│       └── LOCCO_L.json
+│
+├── scripts/                                # 运行脚本
+│   ├── example_usage.py                    # ✅ 使用示例
+│   ├── run_full_pipeline.py                # ⏳ 完整流水线
+│   ├── run_stage.py                        # ⏳ 单阶段运行
+│   └── evaluate.py                         # ⏳ 评估脚本
+│
+├── tests/                                  # 单元测试
+│   ├── __init__.py
+│   ├── test_api_client.py                  # ⏳ API 客户端测试
+│   ├── test_json_utils.py                  # ⏳ JSON 工具测试
+│   └── test_pipeline.py                    # ⏳ 流水线测试
+│
+├── notebooks/                              # Jupyter notebooks
+│   ├── 01_character_exploration.ipynb      # ⏳ 角色探索
+│   ├── 02_diary_analysis.ipynb             # ⏳ 日记分析
+│   └── 03_dialogue_quality_check.ipynb     # ⏳ 对话质量检查
+│
+├── docs/                                   # 文档
+│   ├── README.md                           # ⏳ 详细文档
+│   ├── PIPELINE.md                         # ⏳ 流水线说明
+│   ├── API.md                              # ⏳ API 文档
+│   └── paper_3877.pdf                      # 论文
+│
+├── legacy/                                 # 旧代码备份
+│   ├── character_init_some_describe_1/
+│   ├── character_construct_diaries_2_youhua/
+│   ├── character_diaries_dialogs_3/
+│   ├── construct_traindataset_4/
+│   ├── generate_currentquestions_5/
+│   ├── generate_currentquestions_x/
+│   ├── generate_currentquestions_x_correct/
+│   ├── generate_currentquestions_x_error_answers/
+│   ├── NLG-evaluation-master/
+│   ├── generate_utils.py
+│   ├── norm.py
+│   └── README_OLD.md
+│
+├── .env.example                            # ✅ 环境变量模板
+├── .gitignore                              # ✅ Git 忽略规则
+├── requirements.txt                        # ✅ 依赖列表
+├── setup.py                                # ✅ 包安装配置
+├── README.md                               # ✅ 项目文档
+├── REFACTORING_SUMMARY.md                  # ✅ 重构总结
+├── REFACTORING_COMPLETE.md                 # ✅ 完成报告
+├── LOCCO.json                              # 数据集
+├── LOCCO_L.json                            # 数据集（扩展版）
+└── 3877.pdf                                # 论文
+
+图例：
+✅ = 已完成
+⏳ = 框架已搭建，待完善
+❌ = 旧代码（已移至 legacy/）
+
+核心改进：
+---------
+1. 目录命名规范化（去除数字和拼音）
+2. 模块化设计（清晰的职责分离）
+3. 安全性提升（环境变量管理）
+4. 文档完善（详细的使用说明）
+5. 代码质量（PEP 8、类型提示、docstring）
